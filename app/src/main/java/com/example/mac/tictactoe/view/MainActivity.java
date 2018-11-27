@@ -1,4 +1,4 @@
-package com.example.mac.tictactoe.controller;
+package com.example.mac.tictactoe.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
