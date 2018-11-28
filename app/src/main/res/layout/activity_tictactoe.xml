@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    tools:context=".controller.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -29,77 +31,113 @@
                 android:layout_centerVertical="true"/>
 
             <Button
+                android:onClick="onClickResetBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Reset"
                 android:textAllCaps="false"
                 android:textColor="#FFF"
                 android:layout_alignParentRight="true"
-                android:background="@color/colorPrimary"/>
+                android:background="@android:color/transparent"/>
 
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
 
     <GridLayout
+        android:id="@+id/grid_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="3"
         android:layout_marginTop="30dp">
 
         <Button
+            android:tag="00"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_1"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="01"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_2"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="02"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_3"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="10"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_4"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="11"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_5"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="12"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_6"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="20"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_7"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="21"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_8"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
         <Button
+            android:tag="22"
+            android:onClick="onClickBtn"
+            android:id="@+id/button_9"
             android:layout_height="75dp"
-            android:layout_width="75dp"/>
+            android:layout_width="75dp"
+            android:textSize="12pt"/>
 
     </GridLayout>
 
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:text="X"
+        android:layout_margin="20dp"
+        android:textSize="30pt"
+        android:visibility="gone"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="X"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Winner"/>
-    </LinearLayout>
+    <TextView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Winner"
+        android:textSize="15pt"/>
 
 </LinearLayout>
