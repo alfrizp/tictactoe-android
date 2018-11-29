@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".controller.MainActivity">
+    tools:context=".controller.TicTacToeActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -43,6 +43,25 @@
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/player_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player X"/>
+
+        <TextView
+            android:id="@+id/player_o"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player O"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
 
     <GridLayout
         android:id="@+id/grid_layout"

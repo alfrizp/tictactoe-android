@@ -1,17 +1,17 @@
 package com.example.mac.tictactoe.model;
 
 public class Board {
-    public Player playerX;
-    public Player playerO;
-    public Player currentPlayer;
-    public Cell board[][] = new Cell[3][3];
+    private Player playerX;
+    private Player playerO;
+    private Player currentPlayer;
+    private Cell board[][] = new Cell[3][3];
 
-    public String winner;
-    public boolean isGameOver;
+    private String winner;
+    private boolean isGameOver;
 
-    public Board() {
-        this.playerX = new Player("X");
-        this.playerO = new Player("O");
+    public Board(String player1, String player2) {
+        this.playerX = new Player("X", player1);
+        this.playerO = new Player("O", player2);
         this.currentPlayer = this.playerX;
 
         this.initBoard();
@@ -28,11 +28,11 @@ public class Board {
     public void fillCell(int row, int column) {
         Cell selectedCell = board[row][column];
 
-        if (selectedCell.value.equals("")) {
+        if (selectedCell.getValue().equals("")) {
             board[row][column].setValue(currentPlayer.name);
 
             if (isPlayerWin(currentPlayer, row, column)) {
-                this.winner = currentPlayer.name + " WIN!!!";
+                this.winner = currentPlayer.username + " WIN!!!";
                 this.isGameOver = true;
             } else if(isDraw()) {
                 this.winner = "DRAW !!!";
@@ -45,6 +45,14 @@ public class Board {
 
     public Cell getCell(int row, int column) {
         return board[row][column];
+    }
+
+    public boolean isGameOver() {
+        return isGameOver;
+    }
+
+    public String getWinner() {
+        return winner;
     }
 
     private void changePlayer() {
